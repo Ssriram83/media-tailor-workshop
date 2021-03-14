@@ -1,0 +1,28 @@
+{
+	"name": "aws-ai-services-workshop",
+	"version": "1.0.0",
+	"homepage": "https://github.com/aws-samples/ai-services-workshop#readme",
+	"bugs": {
+		"url": "https://github.com/aws-samples/ai-services-workshop/issues"
+	},
+	"license": "ISC",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aws-samples/ai-services-workshop.git"
+	},
+	"scripts": {
+		"test": "hugo server -w -v -DF --disableFastRender --enableGitInfo --bind=0.0.0.0",
+		"start": "hugo server -w -v --enableGitInfo --bind=0.0.0.0",
+		"build": "hugo -v",
+		"deploy": "aws s3 sync public/ s3://ai-services-workshop-evangelists/ --delete"
+	},
+	"dependencies": {
+		"bl": "^4.0.3",
+		"discharge": "^0.7.1",
+		"hugo-cli": "^0.7.0",
+		"hugo-lunr": "0.0.4",
+		"qs": "^6.5.2",
+		"upgrade": "^1.1.0"
+	}
+}

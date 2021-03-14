@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+        golang: 1.12
+        nodejs: 10
+        python: 3.7
+    commands:
+      - pip3 install --upgrade awscli
+      - pip3 install pygments
+      - wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.deb
+      - dpkg -i hugo_0.55.6_Linux-64bit.deb
+  build:
+    commands:
+      - hugo -v
+      - echo "S3 Upload Starting"
+      - aws s3 sync public/ "s3://${BUCKET_NAME}/" --region us-east-1 --delete
+      - echo "S3 Upload Done"
+      - aws cloudfront create-invalidation --distribution-id "${DISTRIBUTION_ID}" --paths "/*"
+      - echo "CloudFront Invalidation Started"

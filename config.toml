@@ -1,0 +1,34 @@
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "AWS Elemental MediaTailor Workshop"
+theme = "hugo-theme-learn"
+uglyurls = "true"
+googleAnalytics = "UA-138538322-1"
+sectionPagesMenu = "main"
+pygmentsCodeFences = true
+
+[params]
+    themeVariant = "mine"
+    showVisitedLinks = false
+    author = "Girish Nair"
+    description = "AWS Elemental MediaTailor Workshop"
+    disableSearch = false
+    disableAssetsBusting = false
+    disableLanguageSwitchingButton = true
+    disableShortcutsTitle = true
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/Ssriram83/serverless_ad_decision_service"
+weight = 10
+
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-bullhorn'></i> Credits"
+url = "/credits.html"
+weight = 30
+
+[outputs]
+home = [ "HTML", "AMP", "RSS", "JSON"]
+page = [ "HTML", "AMP"]
